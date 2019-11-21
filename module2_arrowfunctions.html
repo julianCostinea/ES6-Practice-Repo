@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrow functions</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const names=['wes', 'kait', 'lux'];
+
+		const fullNames= names.map(function(name){
+			return `${name} bos`;
+		});
+
+		const fullNames2= names.map((name)=>{
+			return `${name} bos`;
+		});
+
+		const fullNames3= names.map((name)=>`${name} bos`);// implicit return
+
+		const fullNames4= names.map(()=>`cool bos`);// no argument
+
+		const sayMyname = (name) =>{alert(`Hello ${name}`)}// arrow functions cant be named (anonymous), but can be stored in variables
+
+		const race='100m dash';
+		const winners= ['Hunter Gath', 'Second Name', 'Third Name'];
+
+		const win= winners.map((winner, i)=>({name:winner, race, place:i+1}));// use () around {} to denote object notation and not a function. race here is used as both object property and value
+
+		const ages= [2, 24, 33, 21, 70, 19, 14, 62];
+		const old2= ages.filter(age=>age>=60);
+		console.log(old2);
+
+		sayMyname('Julian');
+		console.log(fullNames3);
+		console.log(fullNames4);
+		console.log(names);
+	</script>
+</body>
+</html>
