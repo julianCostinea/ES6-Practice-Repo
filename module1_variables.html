@@ -13,7 +13,7 @@
 		const key= 'abc';
 		var age=100;
 		if (age>12) {
-			let dogYears= age*7;
+			let dogYears= age*7;// var would leak out
 			console.log(`You are ${dogYears} dog years old!`);
 		}
 		for (let i = 0; i < 10; i++) {

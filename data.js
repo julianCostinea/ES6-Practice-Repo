@@ -49,3 +49,4 @@ const inventory = {
   shirts: 10,
   pants: 5,
 }
+
