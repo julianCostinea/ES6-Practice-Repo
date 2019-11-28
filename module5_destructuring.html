@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destructuring</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const person0= {
+			first0:'Julian',
+			last0:'Costinea',
+			country0:'Denmark',
+			city0:'Odense',
+			twitter0:'@na',
+		};
+
+		/*const first= person.first;
+		const last= person.last;*/
+
+		const { first0, last0, twitter0 }= person0; //make three variables with value of person properties value
+
+		console.log(first0);// Julian
+
+		const person= {
+			first:'Julian',
+			last:'Costinea',
+			country:'Denmark',
+			city:'Odense',
+			links:{
+				social:{
+					twitter:'@na',
+					facebook:'julian.costinea1@facebook',
+				},
+				web:{
+					blog: 'jcedevelopment.com'
+				}
+			}
+		};
+
+		/*const twitter= person.links.social.twitter;
+		const facebook= person.links.social.facebook; */
+
+		const {twitter:tweet, facebook}= person.links.social;// renaming variable twitter to tweet, while destructuring
+
+		console.log(facebook);//julian.costinea1@facebook
+		console.log(tweet);//@na
+
+		const settings= {
+			width0:300,
+			color:'black'
+		}
+
+		const {width0 = 100, height0= 100, color= blue, fontSize= 25} = settings;// if var is not in settings it defaults to selected value 
+
+		const {w:width=400, h:height=500}={w:800}
+	</script>
+</body>
+</html>

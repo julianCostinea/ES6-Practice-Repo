@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String methods</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const course='RFB2';// React for beginners
+		const flightNumber='123ab678';
+		const accountNumber ='6548RT0001';
+
+		const make='BMW';
+		const model='x5';
+		const colour ='Royal Blue';
+
+		//.startsWith()
+			course.startsWith('RFB');// case sensitive- true
+			flightNumber.startsWith('ab', 3);// 3 offset- true
+
+		//.endsWith()
+			flightNumber.endsWith('78');//true
+			let check = accountNumber.endsWith('RT', 6);//only evaluates first 6 chars- true
+
+		//.includes()
+		flightNumber.includes('RT');//true
+
+
+		//.repeat()
+		let multipleBMWS= make.repeat(3);//BMWBMWBMW
+	</script>
+</body>
+</html>

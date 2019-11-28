@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destructuring functions</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function convertCurrency(amount){
+			const converted= {
+				USD:amount*0.76,
+				GBP:amount*0.53,
+				AUD:amount*1.01,
+				Mex:amount*13.30
+			};
+			return converted;
+		}
+		
+		const hundo= convertCurrency(100);
+		console.log(hundo.AUD);//101
+
+		const {USD, GBP, AUD, Mex}=convertCurrency(100);
+		console.log(AUD);//101- DESTRUCTURED
+
+		/* Order doesnt matter, not all are required- const {GBP, USD}=convertCurrency(100);*/
+
+		function tipCalc0(total, tip=0.15, tax=0.13){
+			return total+ (tip*total)+ (tax*total);
+		}
+
+		function tipCalc({total, tip=0.15, tax=0.13}){
+			return total+ (tip*total)+ (tax*total);
+		}
+		const bill= tipCalc({tip:0.2, total:200});//order not necessary in Destructured
+		console.log(bill);
+
+
+		//calling with no arguments
+		function tipCalc2({total=200, tip=0.2, tax=0.13}={}){
+			return total+ (tip*total)+ (tax*total);
+		}// used for calling function with no arguments
+		const bill2=tipCalc2();
+		console.log(bill2);//266
+	</script>
+</body>
+</html>

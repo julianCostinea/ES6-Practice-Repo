@@ -9,6 +9,86 @@
 		const age = 2;
 		const sentence = `My dog ${name} is ${age*7} years old`;
 		console.log(sentence);
+
+		const person = {
+			name:'Julian',
+			job:'Web Developer',
+			city:'Odense',
+			bio:'About you'
+		};
+
+		const markup= `
+	<div class="person">
+		<h2>${person.name}
+			<span class="job">${person.job}</span>
+		</h2>
+		<p class="location">${person.city}</p>
+		<p class="bio">${person.bio}</p>
+	</div>
+		`;
+
+		document.body.innerHTML=markup;
+
+		const inventors = [
+		  { first: 'Albert', last: 'Einstein', year: 1879 },
+		  { first: 'Isaac', last: 'Newton', year: 1643 },
+		  { first: 'Galileo', last: 'Galilei', year: 1564 },
+		  { first: 'Marie', last: 'Curie', year: 1867 },
+		  { first: 'Johannes', last: 'Kepler', year: 1571 },
+		  { first: 'Nicolaus', last: 'Copernicus', year: 1473 },
+		  { first: 'Max', last: 'Planck', year: 1858 }
+		];
+
+		const markup2= `
+			<ul class="inventors">
+				${inventors.map(inventor =>`
+					<li>Name: ${inventor.first} ${inventor.last}. Birthyear: ${inventor.year}
+					</li>`).join('')}
+			</ul>
+		`;
+		document.body.innerHTML+=markup2;
+
+		const song= {
+			name: 'Hey Jude',
+			artist: 'Paul McCartney',
+			featuring: 'Beatles'
+		};
+
+		const markup3=`
+			<div class="song">
+				<p>
+					${song.name} - ${song.artist}
+					${song.featuring ? `(Featuring ${song.featuring})` : ''}
+					
+				</p>
+			</div>
+		`;
+		document.body.innerHTML+=markup3;
+
+		const beer= {
+			name: 'Belgian Wit',
+			brewery: 'Steam Whistle brewery',
+			keywords: ['pale', 'cloudy','spiced']
+		};
+
+		function renderKeywords(keywords){
+			return `
+				<ul>
+					${keywords.map(keyword=>`<li>${keyword}</li>`).join('')}
+				</ul>
+			`;
+		}
+
+		const markup4=`
+			<div class="beer">
+				<h2>${beer.name}</h2>
+				<p class="brewery">${beer.brewery}</p>
+				${renderKeywords(beer.keywords)}
+			</div>
+		`;
+
+		document.body.innerHTML+=markup4;
 	</script>
+
 </body>
 </html>

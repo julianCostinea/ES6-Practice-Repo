@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destructuring arrays</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const details=['Julian', 123, 'jcedevelopment.com'];
+		
+		/*const name= details[0];
+		const id= details[1];*/
+
+		const[name, id, website]=details;
+		console.log(id);//123
+
+		const data='Basketball,Sports,90210,23';
+		let array_data= data.split(',');
+
+		const[itemName, category, sku, inventory]= data.split(',');
+		console.log(itemName);// basketball
+
+		const team= ['Julian','Harry','Sarah','Keegan','Riker'];
+		const [captain, assistant, ...players]= team; 
+		console.log(players);//Sarah, Keegan, Riker
+
+	</script>
+</body>
+</html>

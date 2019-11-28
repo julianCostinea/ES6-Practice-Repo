@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destructuring Swapping variables</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let inRing= 'Hulk Hogan';
+		let onSide= 'The Rock';
+
+		console.log(inRing); //Hulk Hogan
+
+		[inRing, onSide]= [onSide, inRing];
+
+		console.log(inRing); //The Rock
+	</script>
+</body>
+</html>

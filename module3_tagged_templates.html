@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tagged templates</title>
+	<style>
+		span.hl{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		function highlight0(strings, ...values){// takes all values passed in sentence and puts them in an array
+			debugger; // starts debugger in console
+		}
+
+		const name0= 'Snickers';
+		const age0 = 2;
+		const sentence0 = highlight0`My dog ${name0} is ${age0*7} years old`;
+		console.log(sentence0);
+
+
+		function highlight(strings, ...values){
+			let str='';
+			strings.forEach((string, i)=>{
+				str += `${string} <span contenteditable class='hl'>${values[i] || ''} </span>`;// if values[i] undefined return blank, since strings has 3 elements (my dog, is, years old, '') and values only 2 (name, age)
+			});
+			return str;
+		}
+
+		const name= 'Snickers';
+		const age = 2;
+		const sentence = highlight`My dog ${name} is ${age*7} years old`;
+		document.body.innerHTML=sentence;
+	</script>
+</body>
+</html>
